@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Timucin Erbas — Engineer & Researcher</title>
+<meta name="description" content="Portfolio of Timucin Erbas — rocket engines, embedded systems, and machine learning. Boston University, dual degree in physics and computer engineering." />
+<meta name="author" content="Timucin Erbas" />
+<meta name="theme-color" content="#0a0a0a" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Timucin Erbas — Engineer & Researcher" />
+<meta property="og:description" content="Rocket engines, embedded systems, and machine learning. Boston University." />
+<meta property="og:url" content="https://www.timucinerbas.com" />
+<meta property="og:image" content="https://www.timucinerbas.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Timucin Erbas — Engineer & Researcher" />
+<meta name="twitter:description" content="Rocket engines, embedded systems, and machine learning. Boston University." />
+<meta name="twitter:image" content="https://www.timucinerbas.com/og-image.png" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0a'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='-apple-system,system-ui,sans-serif' font-size='52' font-weight='500' fill='%23fafafa' letter-spacing='-2'%3ETE%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #fafafa;
+    --muted: rgba(250, 250, 250, 0.55);
+    --faint: rgba(250, 250, 250, 0.35);
+    --border: rgba(250, 250, 250, 0.12);
+    --border-strong: rgba(250, 250, 250, 0.22);
+    --hover: rgba(250, 250, 250, 0.035);
+    --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--fg); color: var(--bg); }
+  a { color: inherit; text-decoration: none; }
+  em { font-style: normal; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(10, 10, 10, 0.65);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-mark {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+  .nav-mark em { color: var(--muted); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 1px;
+    background: var(--fg);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nav-links a:hover { color: var(--fg); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a.active { color: var(--fg); }
+  .nav-links a.active::after { width: 100%; }
+
+  /* ---------- LAYOUT ---------- */
+  main { max-width: 1040px; margin: 0 auto; padding: 0 40px; }
+
+  section {
+    padding: 96px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: '';
+    width: 22px; height: 1px;
+    background: var(--faint);
+  }
+
+  /* ---------- HERO ---------- */
+  #about {
+    padding-top: 132px;
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 48px;
+    align-items: start;
+    animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .photo {
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--faint);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 60%);
+    pointer-events: none;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero-text h1 {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(44px, 5.6vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 22px;
+  }
+  .hero-text h1 em { color: var(--muted); }
+
+  .hero-text .lead {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 56ch;
+    margin-bottom: 16px;
+  }
+  .hero-text .lead strong { color: var(--fg); font-weight: 400; }
+
+  .hero-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .hero-meta span::before { content: '— '; color: var(--border-strong); }
+
+  /* ---------- SOCIAL STRIP ---------- */
+  .socials { margin-top: 22px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .socials a {
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); border-radius: 2px;
+    color: var(--muted);
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .socials a:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .socials svg { width: 16px; height: 16px; fill: currentColor; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- RESEARCH ---------- */
+  .research-statement {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 62ch;
+    margin-bottom: 44px;
+  }
+  .research-statement strong { color: var(--fg); font-weight: 400; }
+
+  .research-subhead {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 44px 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .research-subhead:first-of-type { margin-top: 0; }
+
+  .paper-list { list-style: none; }
+  .paper-card {
+    border-top: 1px solid var(--border);
+    padding: 22px 8px;
+    transition: background 0.3s ease;
+  }
+  .paper-card:last-child { border-bottom: 1px solid var(--border); }
+  .paper-card:hover { background: var(--hover); }
+
+  .paper-head {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 20px;
+    align-items: start;
+  }
+  .paper-card.expandable .paper-head { cursor: pointer; user-select: none; }
+
+  .paper-card-title {
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+  .paper-card-authors {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-top: 7px;
+  }
+  .paper-card-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-top: 9px;
+  }
+  .paper-card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+  .paper-card:hover .toggle { border-color: var(--fg); color: var(--fg); }
+  .paper-card.open .toggle { transform: rotate(45deg); }
+
+  .paper-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .paper-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.4s ease;
+  }
+  .paper-card.open .paper-body {
+    max-height: 2200px;
+    opacity: 1;
+    padding-top: 24px;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section-title {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(30px, 3.6vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .section-title em { color: var(--muted); }
+
+  /* ---------- FILTER CHIPS ---------- */
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-chip {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border: 1px solid var(--border-strong);
+    border-radius: 2px;
+    color: var(--muted);
+    background: none;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .filter-chip:hover { color: var(--fg); border-color: var(--fg); }
+  .filter-chip.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+  /* ---------- PROJECT LIST ---------- */
+  .project-list { list-style: none; }
+
+  .project {
+    border-top: 1px solid var(--border);
+    transition: background 0.3s ease;
+  }
+  .project:last-child { border-bottom: 1px solid var(--border); }
+  .project:hover { background: var(--hover); }
+
+  .project-header {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+    padding: 18px 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .project-domain {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .project-title {
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+
+  .project-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .toggle {
+    width: 26px; height: 26px;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, color 0.3s ease;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .project:hover .toggle { border-color: var(--fg); color: var(--fg); }
+  .project.open .toggle { transform: rotate(45deg); }
+
+  .project-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.4s ease;
+    padding: 0 8px;
+  }
+  .project.open .project-body {
+    max-height: 2200px;
+    opacity: 1;
+    padding: 0 8px 32px;
+  }
+
+  /* ---------- PROJECT BODY LAYOUT ----------
+     :has() detects whether a .project-image is present.
+     When present → image-left, text-right.
+     When absent → text takes full width. */
+  .project-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .project-content:has(.project-image) {
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .project-image {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--faint);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: relative;
+  }
+  /* placeholders (no <img>) keep a boxed shape */
+  .project-image:not(:has(img)) { aspect-ratio: 4 / 3; }
+  .project-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.04), transparent 60%);
+    pointer-events: none;
+  }
+  /* real images: width is fixed by the column, height scales to fit the whole image */
+  .project-image:has(img) { background: none; }
+  .project-image:has(img)::after { display: none; }
+  .project-image img { width: 100%; height: auto; display: block; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 9px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .project-summary {
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-size: 14.5px;
+  }
+  .project-detail {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .project-link {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg);
+    padding: 8px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 2px;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .project-link:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .project-link::after { content: '→'; }
+
+  /* ---------- RECOGNITION ---------- */
+  .recognition-list { list-style: none; }
+
+  .recog {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    gap: 32px;
+    padding: 18px 8px;
+    border-top: 1px solid var(--border);
+    align-items: baseline;
+    transition: background 0.3s ease;
+  }
+  .recog:last-child { border-bottom: 1px solid var(--border); }
+  .recog[hidden] { display: none; }
+  .recog:hover { background: var(--hover); }
+
+  .recog-kind {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 6px;
+  }
+  .recog-title {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+  .recog-desc {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .recog-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 820px) {
+    nav { padding: 14px 20px; }
+    .nav-links { gap: 20px; }
+    main { padding: 0 20px; }
+    section { padding: 72px 0 48px; }
+    #about { padding-top: 100px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; }
+    .photo { max-width: 200px; }
+
+    /* mobile project header: domain + toggle on top row, title spans, date below */
+    .project-header {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto auto;
+      row-gap: 4px;
+      align-items: start;
+      padding: 14px 8px;
+    }
+    .project-domain { grid-row: 1; grid-column: 1; font-size: 9px; }
+    .toggle { grid-row: 1; grid-column: 2; }
+    .project-title { grid-row: 2; grid-column: 1 / 3; font-size: 16px; }
+    .project-date { grid-row: 3; grid-column: 1 / 3; font-size: 9.5px; }
+
+    /* image stacks above text on mobile */
+    .project-content:has(.project-image) {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .project-image:not(:has(img)) { aspect-ratio: 16 / 9; }
+
+    .recog { grid-template-columns: 1fr; gap: 6px; }
+    .recog-date { text-align: left; }
+
+    footer { padding: 28px 20px; flex-direction: column; gap: 10px; align-items: flex-start; }
+  }
+
+  /* ---------- ANIMATIONS ---------- */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about" class="nav-mark">TE<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="about">
+    <div class="hero">
+      <div class="photo">
+        <img src="photo.jpg" alt="Timucin Erbas" />
+      </div>
+      <div class="hero-text">
+        <h1>Timucin Erbas<em>.</em></h1>
+        <p class="lead">
+          Rising junior at Boston University, dual degree in <strong>physics and computer engineering</strong>. Currently working on the efficiency frontier of large language models — making them radically cheaper to run at scale.
+        </p>
+        <p class="lead">
+          Previously: research on geometry-grounded transformers, a 30&nbsp;kN rocket engine built from scratch, and computer-vision-informed guidance and control software. Three issued and pending patents on rocket-engine hardware. Masason Foundation Fellow, Z Fellow.
+        </p>
+        <div class="hero-meta">
+          <span>Boston, MA</span>
+          <span>AI × Physics × Computer Engineering</span>
+        </div>
+
+        <div class="socials">
+          <a href="mailto:timucin1erbas@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 8.2L4.4 7H3v.5l9 7.3 9-7.3V7h-1.4L12 13.2Z"/></svg>
+          </a>
+          <a href="https://github.com/Timucin-Erbas" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.6.23 2.79.12 3.08.74.81 1.2 1.84 1.2 3.1 0 4.42-2.7 5.4-5.26 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/timucin-erbas/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="section-label">02 — Research</div>
+    <h2 class="section-title">Research<em>.</em></h2>
+
+    <p class="research-statement">
+      I work on the <strong>efficiency frontier of large language models</strong>, and I'm actively pushing on it from two directions at once. The first is architectural — sparse attention that cuts the compute a transformer spends without giving up what it can do. The second is mechanistic interpretability: on the premise that understanding what a model actually computes is what tells you which computation is redundant, and therefore what can be removed. Both are ongoing — reading, exploring, and running experiments — and they're the same question approached from opposite ends: how to make these models do more with less. I care about problems whose answers move the whole field, not incremental corners of it.
+    </p>
+
+    <div class="research-subhead">Publications &amp; Preprints</div>
+
+    <ul class="paper-list">
+
+      <li class="paper-card expandable">
+        <div class="paper-head">
+          <div class="paper-head-main">
+            <div class="paper-card-title">Learned Span Scoring for Position-Chunked Sparse Attention</div>
+            <div class="paper-card-authors">Timucin Erbas · advised by Prof. Brian Kulis, Boston University</div>
+            <div class="paper-card-status">Active research · workshop paper in preparation</div>
+          </div>
+          <div class="paper-card-date">2026</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="paper-links">
+          <a href="https://github.com/Timucin-Erbas/hierarchical-sparse-attention" target="_blank" rel="noopener" class="project-link">GitHub</a>
+        </div>
+        <div class="paper-body">
+          <div class="project-content">
+            <div class="project-image"><img src="HSA.png" alt="Learned Span Scoring for Position-Chunked Sparse Attention — method rankings across token budgets and fine-tuning scopes" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">Sparse Attention</span>
+                <span class="tag">Long-Context</span>
+                <span class="tag">Set Encoders</span>
+                <span class="tag">GPT-2 / PG19</span>
+                <span class="tag">Distributed Training</span>
+                <span class="tag">Controlled Study</span>
+              </div>
+              <p class="project-summary">A controlled comparison of ten sparse-attention selectors under one shared protocol, isolating what actually limits chunked selection — plus a learned span encoder that wins the kernel-realizable family.</p>
+              <p class="project-detail">
+                Ran ten sparse-attention selectors through a single shared protocol on GPT-2 / PG19 — identical sink/window/diagonal policy, one frozen model, and fine-tuning capacity matched to the parameter — across a full grid of 3 token budgets × 5 seeds × 3 fine-tuning scopes, so that every measured difference is attributable to the selection rule alone. The study sorts the methods into three families (content-based, position-chunked, query-clustering) and shows the decisive gap runs between the first two — and that it is small. The contribution, <em>enc_hip</em>, replaces a hand-picked center-token chunk score with a permutation-invariant set encoder trained to regress each span's true attention mass; it is the strongest position-chunked selector in the grid — best attention fidelity in all nine budget × fine-tuning cells — and closes roughly two-thirds of the perplexity gap to content-based selection at the tightest budget, while keeping the contiguous-span structure that block-sparse kernels require. The write-up leads with its own limitations: content-based selection still wins outright, the advantage is budget-dependent and vanishes once the task saturates, and distilling from a dense teacher caps the method at dense attention by construction. Trained with distributed data-parallelism on 8×H100. The design bet — that the scorer, not the chunking, is the bottleneck — is the same one recent long-context work (HiLS, 2026) converged on independently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="paper-card expandable">
+        <div class="paper-head">
+          <div class="paper-head-main">
+            <div class="paper-card-title">Mechanistic Interpretability for Efficiency</div>
+            <div class="paper-card-authors">Timucin Erbas · advised by Prof. Brian Kulis, Boston University</div>
+            <div class="paper-card-status">Ongoing research · in progress</div>
+          </div>
+          <div class="paper-card-date">Current</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="paper-body">
+          <div class="project-content">
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">Mechanistic Interpretability</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">Efficiency</span>
+                <span class="tag">Research</span>
+              </div>
+              <p class="project-summary">Reverse-engineering what a trained transformer actually computes — to locate the redundant computation an efficient model could skip.</p>
+              <p class="project-detail">
+                The second front of my efficiency work approaches the goal from the opposite direction to architecture: rather than designing a model that spends less compute, I study what a trained transformer is actually doing inside — which components carry which computation, and where that computation is redundant or duplicated. The premise is that efficiency gains follow from understanding: once you can see what a model genuinely computes, you can tell what may be pruned, shared, or approximated without changing its behavior. This work is ongoing with Prof. Brian Kulis at Boston University; results and write-ups will follow as they mature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="paper-card expandable">
+        <div class="paper-head">
+          <div class="paper-head-main">
+            <div class="paper-card-title">Text-Conditioned VGGT for 3D Reconstruction</div>
+            <div class="paper-card-authors">Timucin Erbas, Leroy B. Adisaputro, Azsadur R. Rakin, Tianyou Luo</div>
+            <div class="paper-card-status">Manuscript in preparation · assessed as near-publishable by faculty advisor</div>
+          </div>
+          <div class="paper-card-date">2026</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="paper-links">
+          <a href="https://drive.google.com/file/d/1MplJBszu561lYJ4sfGCpYWNnYmTSrrnP/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Paper</a>
+          <a href="https://github.com/Timucin-Erbas/VGGTTextInjection" target="_blank" rel="noopener" class="project-link">GitHub</a>
+        </div>
+        <div class="paper-body">
+          <div class="project-content">
+            <div class="project-image"><img src="VGGT.png" alt="Text-Conditioned VGGT for 3D Reconstruction" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">Transformers</span>
+                <span class="tag">Cross-Attention</span>
+                <span class="tag">3D Reconstruction</span>
+                <span class="tag">CLIP Encoding</span>
+                <span class="tag">GPU</span>
+                <span class="tag">Distributed Training</span>
+              </div>
+              <p class="project-summary">Injected language conditioning into Meta's VGGT to improve 3D reconstruction depth accuracy by 36%.</p>
+              <p class="project-detail">
+                Extended Meta's Visual Geometry Grounded Transformer (VGGT) by designing and integrating lightweight cross-attention adapters that inject natural language captions as a semantic conditioning signal into the model's internal representations, without retraining the full backbone. Using a CLIP text encoder to bridge language and geometry, trained on a custom-curated 200GB subset of the CO3D dataset annotated with auto-generated captions, and systematically evaluated injection placement and adapter dimensionality across multiple architectural configurations. The best-performing variant — independent adapters inserted at the four DPT pyramid input layers — reduced per-pixel depth error by 36.1% relative to the vanilla VGGT baseline, demonstrating that high-level semantic context from text can meaningfully guide geometric prediction in sparse or ambiguous visual conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <section id="work">
+    <div class="section-label">03 — What I've Built</div>
+    <h2 class="section-title">Selected work<em>.</em></h2>
+
+    <div class="filters" role="tablist">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="aerospace">Aerospace</button>
+      <button class="filter-chip" data-filter="ml">Artificial Intelligence</button>
+      <button class="filter-chip" data-filter="embedded">Embedded</button>
+    </div>
+
+    <ul class="project-list" id="projects">
+
+      <li class="project" data-cat="ml">
+        <div class="project-header">
+          <div class="project-domain">AI/ML</div>
+          <div class="project-title">ML-Accelerated DSMC for Aerospace</div>
+          <div class="project-date">2026</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-image"><img src="dsmc.png" alt="ML-Accelerated DSMC for Aerospace" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">DSMC</span>
+                <span class="tag">Surrogate Models</span>
+                <span class="tag">Rarefied Flow</span>
+                <span class="tag">Simulation Software</span>
+                <span class="tag">PyTorch</span>
+              </div>
+              <p class="project-summary">Trained a neural surrogate model on data generated by a from-scratch 2-D DSMC solver to replace its most expensive phase — the per-cell collision loop — cutting simulation runtime while preserving the underlying rarefied-flow physics.</p>
+              <p class="project-detail">
+                First built a complete Direct Simulation Monte Carlo (DSMC) solver in Python/NumPy using Bird's No-Time-Counter (NTC) scheme on a hard-sphere argon gas, structured to mirror production codes like SPARTA and dsmcFoam across five phases: free-flight advection with diffuse-reflection walls, particle-to-cell indexing, NTC collision (candidate selection, acceptance–rejection, isotropic elastic scattering), and macroscopic moment sampling. Validated on plane Couette flow in the transition regime (Knudsen number ≈ 0.17), it reproduces rarefaction physics that continuum Navier–Stokes cannot — wall velocity slip, departure from the linear continuum profile, and viscous heating above wall temperature. Per-phase timing instrumentation isolated the collision loop as the dominant cost, so I used the solver to generate ground-truth training data and trained an AI model to emulate the collision step directly — learning the mapping from a cell's particle state to its post-collision velocity distribution. Dropped back into the simulation loop in place of the explicit NTC collision routine, the trained surrogate accelerates the simulation's dominant bottleneck phase while preserving the rarefied-flow physics of the baseline solver.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="project" data-cat="aerospace">
+        <div class="project-header">
+          <div class="project-domain">Aerospace</div>
+          <div class="project-title">30 kN Liquid Rocket Engine</div>
+          <div class="project-date">2025</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-image"><img src="rocket_engine.png" alt="30 kN Liquid Rocket Engine" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">Liquid Propulsion</span>
+                <span class="tag">Cold Flow</span>
+                <span class="tag">CAD</span>
+                <span class="tag">Mechanical Design</span>
+              </div>
+              <p class="project-summary">Led a four-person team to design and build a 30 kN sea-level LOX/kerosene liquid rocket engine test stand, personally owning the propellant pressurization, control, and feed systems — including a pressure-fed design that holds propellant pressure constant throughout a burn, avoiding the thrust decay typical of pressure-fed engines.</p>
+              <p class="project-detail">
+                As project manager of a four-person team, directed the design of every major subsystem of a 30 kN sea-level LOX/kerosene engine — a ~200 kg ground-based test article — and was solely responsible for the oxidizer and fuel pressurization, control, and feed systems. The engine runs at 10 bar chamber pressure through a team-designed impinging injector, with a Rao-contour nozzle I designed and had CNC-machined, and is built around a regenerative-style liquid-nitrogen cooling circuit. Its defining feature is the pressurization system: a pressure-fed architecture capable of variable propellant pressures up to 100 bar that, unlike typical fixed or blowdown pressure-fed systems, actively maintains constant propellant pressure across the entire burn — eliminating the thrust decay long pressure-fed runs normally suffer. Design was backed by CFD, combustion and thermal modelling, structural FEA, and hand calculations in ANSYS, fabricated primarily from steel with aluminium on non-load-bearing parts. A full cold-flow test validated mass flow, feed-system behaviour, and pressures across the engine via thermocouples and pressure transducers, supporting the 30 kN calculated thrust figure. The build was deliberately iterative: a first-revision pressurizer that bottlenecked at its regulators was resolved by running many in parallel to break the flow limit, and an early injector that leaked through its layered manufacturing seams was reworked with revised sealing. Rather than rush to hot fire, I chose to re-iterate the design with the lessons learned — chief among them how strongly the achievable design is shaped by what a manufacturer can actually produce. The same engine is operated remotely through the Ethernet control architecture detailed below.
+              </p>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1bXUfGtofvU2BH40ci9XTbzm6GVqArI6X/view?usp=share_link" target="_blank" rel="noopener" class="project-link">Engine Photo</a>
+            <a href="https://drive.google.com/file/d/1SLyWXuvvFTD6YQchAbz1wNxCQZ7ejguU/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Build Photo</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="project" data-cat="embedded">
+        <div class="project-header">
+          <div class="project-domain">Embedded</div>
+          <div class="project-title">Ethernet Control Architecture, 30 kN Engine</div>
+          <div class="project-date">2025</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">Ethernet</span>
+                <span class="tag">UDP</span>
+                <span class="tag">STM32</span>
+                <span class="tag">PoE</span>
+                <span class="tag">Real-Time Control</span>
+              </div>
+              <p class="project-summary">Built the real-time Ethernet control network that operated the 30 kN engine end-to-end during its cold-flow test — a single control computer commanding 10 actuators and reading 20 sensors over UDP at sub-5 ms latency.</p>
+              <p class="project-detail">
+                Architected and built the full control network for the 30 kN engine: a LAN of four interconnected Ethernet switches linking one control computer to 30 STM32-based edge devices across the test stand. I designed all of the networking hardware and wrote the custom UDP packet layer that issues commands and streams telemetry, driving 10 actuators while simultaneously reading 20 sensors in real time at under 5 ms latency (a teammate built the data-display software on top of the packet code I wrote). The hardest problem was intermittent connectivity — endpoints kept dropping off the LAN and packets failed to route as device IP addresses shifted unpredictably. I traced it by probing power and communication lines across the edge circuits, dumping and reading the STM32 register values on the affected boards, and running extensive ping tests, which revealed the root cause: the STM32s were browning out whenever their actuators switched on or off, as the high inrush current through the shared endpoint circuit collapsed each board's supply voltage and reset its network stack. I solved it by moving the edge devices to power-over-Ethernet and adding an LC denoising circuit to isolate the boards from actuator switching transients. The system ran the engine end-to-end through its full cold-flow test, fully validated.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="project" data-cat="aerospace">
+        <div class="project-header">
+          <div class="project-domain">Aerospace</div>
+          <div class="project-title">Dynamic Rocket Engine Nozzle</div>
+          <div class="project-date">2024</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-image"><img src="dynamic_nozzle.png" alt="Dynamic Rocket Engine Nozzle" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">ANSYS CFD</span>
+                <span class="tag">Isentropic Flow</span>
+                <span class="tag">Nozzle Design</span>
+                <span class="tag">Real-Time Control</span>
+                <span class="tag">Mechatronics</span>
+              </div>
+              <p class="project-summary">Designed an altitude-adaptive rocket nozzle that reshapes itself in flight to stay optimally expanded at every altitude, achieving 10.88% higher efficiency than the static parabolic nozzle class used on SpaceX's Merlin engine in ANSYS CFD — a gain that would cut cost-per-kilogram to orbit by roughly 12%.</p>
+              <p class="project-detail">
+                Modern rocket nozzles have a fixed shape optimized for a single altitude, so they bleed efficiency to over- and under-expansion everywhere else along a flight. This project develops a nozzle that continuously reshapes itself to stay optimally expanded at every altitude, built from two coupled systems. The physical mechanism is a ring of interlocking flaps driven by coordinated stepper motors, joined with axisymmetric hinges and circular-sector extensions so the nozzle expands while staying gap-free and continuous — preventing exhaust leakage and flow separation. The contour-generation software computes the optimal flap angle in real time: using isentropic flow relations and ideal-gas assumptions, it derives the critical radii and a continuous, differentiable parabolic contour for both a sea-level-optimized nozzle and an altitude-optimized nozzle, then sets the flap angle that morphs one into the other. Validated in ANSYS CFD across 29 altitudes up to 66 km — with boundary conditions regressed from real SpaceX Falcon 9 flight telemetry and thrust integrated over the exit plane by a Riemann-sum method — the dynamic parabolic nozzle outperformed the static parabolic baseline by 10.88%, equivalent to a ~12% reduction in cost per kilogram to orbit. The build surfaced and resolved real failure modes through iteration: external-hinge flaps that opened gaps were redesigned with axisymmetric joints, conical contours that produced exit shockwaves were replaced with parabolic ones, and unstable 2-D simulations were rebuilt as custom-fluid axisymmetric runs with ramped boundary conditions. A feasibility analysis showed the software solves in under 0.1 s on a single CPU and that standard nozzle materials survive the ~950 °C environment, making the system buildable with existing hardware. This work underlies pending rocket-nozzle patents.
+              </p>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/18kYrRmbeh2i2aXCh191i7r9riulwu0dK/view?usp=sharing" target="_blank" rel="noopener" class="project-link">CAD Drawing</a>
+            <a href="https://drive.google.com/file/d/1K67NKp6djcMAu4yE4ooWUtr9hC0Bn8FW/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Writeup</a>
+            <a href="https://drive.google.com/file/d/1jYnNhougVTEew4rVpsGKB5vRa5pfFCpy/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Poster</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="project" data-cat="embedded">
+        <div class="project-header">
+          <div class="project-domain">Embedded</div>
+          <div class="project-title">STM32 BMP388 Sensor Emulator</div>
+          <div class="project-date">2024</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-image"><img src="bmp388_emulator.png" alt="STM32 BMP388 Sensor Emulator" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">STM32</span>
+                <span class="tag">I2C</span>
+                <span class="tag">Sensor Emulation</span>
+                <span class="tag">Embedded C++</span>
+                <span class="tag">HIL Testing</span>
+              </div>
+              <p class="project-summary">Built a firmware-level BMP388 sensor emulator that feeds a flight computer synthetic altitude data over I²C, replicating the sensor's full register map, calibration coefficients, and data-ready interrupt so ground tests run with no real sensor or pressure chamber.</p>
+              <p class="project-detail">
+                Acting as an I²C slave at the BMP388's own address (0x77), the microcontroller responds to the flight computer exactly as the real sensor would: it returns the genuine chip ID (0x50) so the driver accepts it as authentic, replies to the event, status, and interrupt registers with power-on and data-ready flags, and serves 24-bit pressure and temperature readings in the sensor's little-endian register layout. The core challenge is that the flight computer's BMP388 driver runs every raw reading through a multi-coefficient compensation formula using the sensor's NVM calibration constants. To inject an arbitrary target pressure or temperature, the firmware loads a chosen set of those calibration coefficients and then runs the compensation math in reverse — computing the exact raw register values that, after the driver's forward compensation, decode back to the desired physical reading (22.5 °C and 101,250 Pa in the reference configuration). A simulated data-ready interrupt is pulsed on a GPIO line every 10 ms to drive the flight computer's interrupt-driven read loop at a realistic cadence. Validated against a real external STM32-based flight computer, which read the emulated sensor as a genuine BMP388 with no driver modifications, the result is a fully synthetic, controllable altitude source that lets flight software be validated on the bench — replaying trajectories and edge cases — without a vacuum chamber, a real sensor, or an actual flight.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="project" data-cat="aerospace">
+        <div class="project-header">
+          <div class="project-domain">Aerospace</div>
+          <div class="project-title">Model Predictive Control for Lunar Landing</div>
+          <div class="project-date">2023</div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="project-content">
+            <div class="project-image"><img src="mpc_lunar_landing.png" alt="Model Predictive Control for Lunar Landing" /></div>
+            <div class="project-text">
+              <div class="tags">
+                <span class="tag">MPC</span>
+                <span class="tag">GNC</span>
+                <span class="tag">Physics Simulation</span>
+                <span class="tag">Optimal Control</span>
+                <span class="tag">Multithreading</span>
+              </div>
+              <p class="project-summary">Designed and implemented an MPC algorithm for autonomous rocket precision landing, achieving 100% landing success within 550 meters of trajectory correction in a custom Mars-like physics simulation. Presented work in the 2023 American Control Conference (ACC).</p>
+              <p class="project-detail">
+                Built from scratch in Python, the algorithm controls a rocket's main engine gimbal, throttle, and cold gas thrusters simultaneously using a depth-first scenario tree search with a time horizon of 6 steps. At each time step, up to 65,536 actuation sequences are evaluated using a derived physics model accounting for 3D linear and angular dynamics, fuel burn, and gravity. Parallel processing reduced sequential computation to 128 scenarios, keeping solve time feasible. A three-stage dynamic cost function shifts variable prioritization by altitude to balance trajectory correction, orientation control, and soft touchdown. Validated across 58 simulations on a SpaceX Starship-like rocket in Mars gravity (3.7 m/s²), the algorithm achieved 100% success up to 550 meters of trajectory correction and requires flight computer hardware equivalent to ~20 Intel Xeon CPUs — well within feasibility for a real mission. Together with a CNN-based landing-site selector, it forms a complete autonomous GNC stack.
+              </p>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1SIXpKnjW8AhbYm0DQfeC_DJ_McsEjdjv/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Poster</a>
+            <a href="https://drive.google.com/file/d/1duhSpTk3BRFQ1FhBNsOgwMAA4MUfKMcx/view?usp=sharing" target="_blank" rel="noopener" class="project-link">Writeup</a>
+            <a href="https://github.com/Timucin-Erbas/Autonomous-Precision-Rocket-Landing-Algorithm/tree/main" target="_blank" rel="noopener" class="project-link">GitHub</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="recognition">
+    <div class="section-label">04 — Awards, Publications, Patents</div>
+    <h2 class="section-title">Recognition &amp; record<em>.</em></h2>
+
+    <div class="filters" id="recog-filters" role="tablist">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="patent">Patents</button>
+      <button class="filter-chip" data-filter="award">Awards</button>
+      <button class="filter-chip" data-filter="fellowship">Fellowships &amp; Honors</button>
+      <button class="filter-chip" data-filter="presentation">Presentations</button>
+    </div>
+
+    <ul class="recognition-list">
+
+      <li class="recog" data-cat="patent">
+        <div>
+          <div class="recog-kind">Patent · Issued</div>
+          <div class="recog-title">Turbopump Device for Rocket Engines</div>
+        </div>
+        <div class="recog-desc">US Patent 12,497,935. A regenerative-cooling-inspired rocket engine turbopump that requires significantly fewer parts to build than conventional turbopumps.</div>
+        <div class="recog-date">2025</div>
+      </li>
+
+      <li class="recog" data-cat="award">
+        <div>
+          <div class="recog-kind">Award</div>
+          <div class="recog-title">1st Place Worldwide — Robotics &amp; Intelligent Machines</div>
+        </div>
+        <div class="recog-desc">Regeneron International Science and Engineering Fair (ISEF). For a precision rocket-landing system pairing a CNN landing-site selector with a model-predictive-control guidance algorithm.</div>
+        <div class="recog-date">2023</div>
+      </li>
+
+      <li class="recog" data-cat="fellowship">
+        <div>
+          <div class="recog-kind">Honor</div>
+          <div class="recog-title">Masayoshi Son Foundation Member</div>
+        </div>
+        <div class="recog-desc">Selected by a committee including Shinya Yamanaka (2012 Nobel Laureate in Medicine), Makoto Gonokami (President of the University of Tokyo, 2015–2021), and Masayoshi Son (founder of SoftBank).</div>
+        <div class="recog-date">2022</div>
+      </li>
+
+      <li class="recog" data-cat="fellowship">
+        <div>
+          <div class="recog-kind">Fellowship</div>
+          <div class="recog-title">Z Fellows</div>
+        </div>
+        <div class="recog-desc">Selected for work on systems that grow and train biological neural networks.</div>
+        <div class="recog-date">2023</div>
+      </li>
+
+      <li class="recog" data-cat="fellowship">
+        <div>
+          <div class="recog-kind">Fellowship</div>
+          <div class="recog-title">1517 Medici Foundation</div>
+        </div>
+        <div class="recog-desc">Backed for the same work on growing and training biological neural networks.</div>
+        <div class="recog-date">2023</div>
+      </li>
+
+      <li class="recog" data-cat="award">
+        <div>
+          <div class="recog-kind">Award</div>
+          <div class="recog-title">3rd Place Worldwide — Engineering Technology: Statics &amp; Dynamics</div>
+        </div>
+        <div class="recog-desc">Regeneron ISEF. For the altitude-adaptive dynamic rocket engine nozzle.</div>
+        <div class="recog-date">2024</div>
+      </li>
+
+      <li class="recog" data-cat="award">
+        <div>
+          <div class="recog-kind">Award</div>
+          <div class="recog-title">Top 300 Scholar — Regeneron Science Talent Search</div>
+        </div>
+        <div class="recog-desc">National recognition (Regeneron STS) for the model-predictive-control precision rocket-landing work also presented at the 2023 American Control Conference.</div>
+        <div class="recog-date">2024</div>
+      </li>
+
+      <li class="recog" data-cat="patent">
+        <div>
+          <div class="recog-kind">Patent · Pending</div>
+          <div class="recog-title">Altitude-Adaptive Dynamic Rocket Nozzle</div>
+        </div>
+        <div class="recog-desc">US Patent Application 63/637,475. An altitude-adaptive nozzle that reshapes itself in flight, reducing the cost of space transportation by ~12%.</div>
+        <div class="recog-date">2025</div>
+      </li>
+
+      <li class="recog" data-cat="patent">
+        <div>
+          <div class="recog-kind">Patent · Pending</div>
+          <div class="recog-title">Ablative Altitude-Adaptive Solid-Motor Nozzle</div>
+        </div>
+        <div class="recog-desc">US Provisional Application 63/964,983. A fixed-geometry solid-motor nozzle that uses controlled erosion of a thick engineered ablative liner to passively raise its expansion ratio during ascent — tracking ambient pressure and improving efficiency with no moving parts.</div>
+        <div class="recog-date">2026</div>
+      </li>
+
+      <li class="recog" data-cat="award">
+        <div>
+          <div class="recog-kind">Award</div>
+          <div class="recog-title">Office of Naval Research Special Award</div>
+        </div>
+        <div class="recog-desc">Regeneron ISEF. $15,000 award from the ONR on behalf of the U.S. Navy and Marine Corps.</div>
+        <div class="recog-date">2024</div>
+      </li>
+
+      <li class="recog" data-cat="presentation">
+        <div>
+          <div class="recog-kind">Presentation</div>
+          <div class="recog-title">Presenter, American Control Conference</div>
+        </div>
+        <div class="recog-desc">Accepted to present "Precision Rocket Landing Model Predictive Control Algorithm" at the 2023 ACC poster session.</div>
+        <div class="recog-date">2023</div>
+      </li>
+
+      <li class="recog" data-cat="award">
+        <div>
+          <div class="recog-kind">Award</div>
+          <div class="recog-title">SAE International Special Award</div>
+        </div>
+        <div class="recog-desc">Regeneron ISEF. $2,000 award from SAE International for the precision rocket-landing project.</div>
+        <div class="recog-date">2023</div>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <span>© Timucin Erbas, 2026</span>
+</footer>
+
+<script>
+  // ---------- Filter chips: Selected Work ----------
+  const chips = document.querySelectorAll('#work .filter-chip');
+  const workProjects = document.querySelectorAll('#work .project');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      workProjects.forEach(p => {
+        if (filter === 'all' || p.dataset.cat === filter) {
+          p.hidden = false;
+        } else {
+          p.hidden = true;
+          p.classList.remove('open');
+        }
+      });
+    });
+  });
+
+  // ---------- Filter chips: Recognition ----------
+  const recogChips = document.querySelectorAll('#recognition .filter-chip');
+  const recogs = document.querySelectorAll('#recognition .recog');
+
+  recogChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+      recogChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      recogs.forEach(r => {
+        r.hidden = !(filter === 'all' || r.dataset.cat === filter);
+      });
+    });
+  });
+
+  // ---------- Expand / collapse (all project cards, incl. research) ----------
+  document.querySelectorAll('.project').forEach(project => {
+    const header = project.querySelector('.project-header');
+    header.addEventListener('click', () => {
+      project.classList.toggle('open');
+    });
+  });
+
+  // ---------- Expand / collapse paper cards ----------
+  document.querySelectorAll('.paper-card.expandable').forEach(card => {
+    const head = card.querySelector('.paper-head');
+    head.addEventListener('click', () => {
+      card.classList.toggle('open');
+    });
+  });
+
+  // ---------- Scroll fade-in for sections ----------
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+  document.querySelectorAll('#research, #work, #recognition').forEach(el => {
+    el.classList.add('fade-in');
+    fadeObserver.observe(el);
+  });
+
+  // ---------- Active nav-link tracking ----------
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
