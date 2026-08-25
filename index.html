@@ -642,7 +642,7 @@
       <div class="hero-text">
         <h1>Timucin Erbas<em>.</em></h1>
         <p class="lead">
-          Rising junior at Boston University, dual degree in <strong>physics and computer engineering</strong>. Currently working on the efficiency frontier of large language models — making them radically cheaper to run at scale.
+          Rising junior at Boston University, dual degree in <strong>physics and computer engineering</strong>. Currently working on transformer architectures — sparse attention for long-context efficiency, and recurrent-depth transformers that let a model reason longer at test time without growing in size.
         </p>
         <p class="lead">
           Previously: research on geometry-grounded transformers, a 30&nbsp;kN rocket engine built from scratch, and computer-vision-informed guidance and control software. Three issued and pending patents on rocket-engine hardware. Masayoshi Son Foundation Fellow, Z Fellow.
@@ -672,7 +672,7 @@
     <h2 class="section-title">Research<em>.</em></h2>
 
     <p class="research-statement">
-      I work on the <strong>efficiency frontier of large language models</strong>, and I'm actively pushing on it from two directions at once. The first is architectural — sparse attention that cuts the compute a transformer spends without giving up what it can do. The second is mechanistic interpretability: on the premise that understanding what a model actually computes is what tells you which computation is redundant, and therefore what can be removed. Both are ongoing — reading, exploring, and running experiments — and they're the same question approached from opposite ends: how to make these models do more with less. I care about problems whose answers move the whole field, not incremental corners of it.
+      I work on two lines of transformer research at once. The first is architectural efficiency — sparse attention that cuts the compute a transformer spends without giving up what it can do. The second is recurrent-depth transformers, which let a model reason longer at test time without making the model itself any bigger. Both are ongoing — reading, exploring, and running experiments. I care about problems whose answers move the whole field, not incremental corners of it.
     </p>
 
     <div class="research-subhead">Publications &amp; Preprints</div>
@@ -716,7 +716,7 @@
       <li class="paper-card expandable">
         <div class="paper-head">
           <div class="paper-head-main">
-            <div class="paper-card-title">Mechanistic Interpretability for Efficiency</div>
+            <div class="paper-card-title">Recurrent-Depth Transformers</div>
             <div class="paper-card-authors">Timucin Erbas · advised by Prof. Brian Kulis, Boston University</div>
             <div class="paper-card-status">Ongoing research · in progress</div>
           </div>
@@ -727,14 +727,14 @@
           <div class="project-content">
             <div class="project-text">
               <div class="tags">
-                <span class="tag">Mechanistic Interpretability</span>
+                <span class="tag">Recurrent Depth</span>
+                <span class="tag">Latent Reasoning</span>
                 <span class="tag">Transformers</span>
-                <span class="tag">Efficiency</span>
                 <span class="tag">Research</span>
               </div>
-              <p class="project-summary">Reverse-engineering what a trained transformer actually computes — to locate the redundant computation an efficient model could skip.</p>
+              <p class="project-summary">Scaling a transformer's reasoning depth at test time by iterating a shared recurrent block in latent space, instead of generating more tokens.</p>
               <p class="project-detail">
-                The second front of my efficiency work approaches the goal from the opposite direction to architecture: rather than designing a model that spends less compute, I study what a trained transformer is actually doing inside — which components carry which computation, and where that computation is redundant or duplicated. The premise is that efficiency gains follow from understanding: once you can see what a model genuinely computes, you can tell what may be pruned, shared, or approximated without changing its behavior. This work is ongoing with Prof. Brian Kulis at Boston University; results and write-ups will follow as they mature.
+                Alongside the sparse attention work, I've been studying recurrent-depth transformers — architectures where a shared block of layers is applied repeatedly in latent space, letting reasoning depth scale at test time independent of model size or output length. Results and write-ups will follow as they mature.
               </p>
             </div>
           </div>
@@ -746,7 +746,7 @@
           <div class="paper-head-main">
             <div class="paper-card-title">Text-Conditioned VGGT for 3D Reconstruction</div>
             <div class="paper-card-authors">Timucin Erbas, Leroy B. Adisaputro, Azsadur R. Rakin, Tianyou Luo</div>
-            <div class="paper-card-status">Manuscript in preparation · assessed as near-publishable by faculty advisor</div>
+            <div class="paper-card-status">Assessed as near-publishable by faculty advisor</div>
           </div>
           <div class="paper-card-date">2026</div>
           <div class="toggle">+</div>
